@@ -3,6 +3,7 @@ session_start();
 include 'koneksi.php';
 
 $error = "";
+$success = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
@@ -26,16 +27,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user_id'] = $row['id'];
-                $_SESSION['role'] = $row['role'];
                 $_SESSION['nama'] = $row['nama'];
 
-                // PASTIKAN PATH REDIRECT SESUAI FILE/FOLDER KAMU
-                if ($row['role'] == 'admin') {
-                    header("Location: admin/dashboard.php"); // Perhatikan pathnya
+                // Daftar email yang diizinkan jadi admin
+                $allowed_admins = ['admin@adoptme.com'];
+
+                if (in_array($email, $allowed_admins)) {
+                    $_SESSION['role'] = 'admin';
+                    $redirect = "admin/dashboard.php"; // Admin masuk ke dashboard
                 } else {
-                    header("Location: index.php");
+                    $_SESSION['role'] = 'pengguna';
+                    $redirect = "index.php"; // Pengguna biasa ke halaman utama
                 }
-                exit();
+
+                $success = "✅ Login berhasil!";
+                echo "<script>
+                        setTimeout(function() {
+                            window.location.href = '$redirect';
+                        }, 2000);
+                      </script>";
             } else {
                 $error = "⚠️ Password salah!";
             }
@@ -66,6 +76,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (!empty($error)): ?>
             <div class="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">
                 <?= $error; ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- Pesan Sukses -->
+        <?php if (!empty($success)): ?>
+            <div class="bg-green-100 text-green-700 p-3 rounded mb-4 text-sm">
+                <?= $success; ?>
             </div>
         <?php endif; ?>
         

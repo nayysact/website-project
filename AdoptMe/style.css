@@ -27,3 +27,8 @@ h1 {
 .btn:hover {
     background-color: #6d4c41;
 }
+
+.active {
+    border-bottom: 3px solid white;
+    font-weight: bold;
+}

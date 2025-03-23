@@ -56,7 +56,16 @@ $adopsi = mysqli_query($conn, $query);
 </head>
 <body class="bg-gray-100 p-8">
 
-<h1 class="text-3xl font-bold text-[#8b5e34] mb-8">Kelola Data Adopsi</h1>
+<!-- ===== NAVBAR ADMIN ===== -->
+<nav class="bg-[#8b5e34] text-white py-4 shadow-md">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Kelola Data Adopsi</h1>
+        <div class="flex items-center space-x-4">
+            <a href="dashboard.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Dashboard</a>
+            <a href="logout.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Logout</a>
+        </div>
+    </div>
+</nav>
 
 <!-- Tabel Data Adopsi -->
 <div class="bg-white rounded-lg shadow-md p-6">
@@ -103,7 +112,7 @@ $adopsi = mysqli_query($conn, $query);
 </div>
 
 <div class="mt-8">
-    <a href="../dashboard.php" class="bg-[#d9a36a] text-white px-4 py-2 rounded hover:bg-[#c48950]">Kembali ke Dashboard</a>
+    <a href="dashboard.php" class="bg-[#d9a36a] text-white px-4 py-2 rounded hover:bg-[#c48950]">Kembali ke Dashboard</a>
 </div>
 
 </body>

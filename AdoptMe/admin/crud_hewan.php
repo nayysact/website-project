@@ -23,8 +23,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     <div class="container mx-auto px-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold">Kelola Hewan</h1>
         <div class="flex items-center space-x-4">
-            <a href="dashboard_admin.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Dashboard</a>
-            <a href="../logout.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Logout</a>
+            <a href="dashboard.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Dashboard</a>
+            <a href="logout.php" class="bg-white text-[#8b5e34] px-4 py-2 rounded-lg">Logout</a>
         </div>
     </div>
 </nav>

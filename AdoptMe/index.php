@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,57 +5,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdoptMe - Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- Navbar -->
-<nav class="bg-[#8b5e34] text-white py-4 shadow-md relative z-50">
-    <div class="container mx-auto flex justify-between items-center px-6">
-        <a href="index.php" class="text-2xl font-bold">AdoptMe</a>
-
-        <div class="space-x-6 flex items-center">
-            <!-- Menu Garis Tiga -->
-            <div class="relative">
-                <button id="menuDropdownBtn" class="text-2xl hover:text-gray-300">&#9776;</button>
-
-                <!-- Menu Dropdown -->
-                <div id="menuDropdown" class="hidden absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-lg shadow-lg z-50">
-                    <a href="toko.php" class="block px-4 py-2 hover:bg-gray-100">Toko</a>
-                    <a href="panduan.php" class="block px-4 py-2 hover:bg-gray-100">Panduan</a>
-                </div>
-            </div>
-
-            <a href="index.php" class="hover:text-gray-300">Beranda</a>
-            <a href="tentang.php" class="hover:text-gray-300">Tentang</a>
-            <a href="hewan.php" class="hover:text-gray-300">Hewan</a>
-            <a href="kontak.php" class="hover:text-gray-300">Kontak</a>
-
-            <?php if (isset($_SESSION['nama'])): ?>
-                <?php $inisial = strtoupper(substr($_SESSION['nama'], 0, 1)); ?>
-
-                <!-- Dropdown User -->
-                <div class="relative">
-                    <button id="userDropdown" class="bg-white text-[#8b5e34] px-3 py-1 rounded-full font-bold">
-                        <?= $inisial; ?>
-                    </button>
-
-                    <!-- Menu Dropdown User -->
-                    <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-50">
-                        <a href="logout.php" class="block px-4 py-2 text-[#8b5e34] hover:bg-gray-100">Logout</a>
-                    </div>
-                </div>
-            <?php else: ?>
-                <a href="login.php" class="hover:text-gray-300">Login</a>
-            <?php endif; ?>
-        </div>
-    </div>
-</nav>
+<?php include 'navbar.php'; ?>
 
 <!-- Hero Section -->
 <header class="bg-[#8b5e34] text-white py-12">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         <div class="text-center md:text-left md:w-1/2">
-            <h1 class="text-5xl font-bold">Selamat Datang di AdoptMe</h1>
+            <h1 class="text-5xl font-bold text-white">Selamat Datang di AdoptMe</h1>
             <p class="mt-3 text-lg">Temukan sahabat setia Anda dan berikan mereka rumah penuh kasih</p>
             <a href="hewan.php" class="mt-6 inline-block bg-[#d9a36a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#c48950]">
                 Jelajahi Hewan
@@ -148,36 +104,6 @@ session_start();
     <p>&copy; 2025 AdoptMe - Temukan Sahabat Sejatimu</p>
     <p>Jl. Mawar No. 49, Surabaya | Email: kontak@adoptme.com</p>
 </footer>
-
-<script>
-    // Dropdown Menu Garis Tiga
-    const menuBtn = document.getElementById("menuDropdownBtn");
-    const menuDropdown = document.getElementById("menuDropdown");
-
-    menuBtn.addEventListener("click", () => {
-        menuDropdown.classList.toggle("hidden");
-    });
-
-    document.addEventListener("click", (event) => {
-        if (!menuBtn.contains(event.target) && !menuDropdown.contains(event.target)) {
-            menuDropdown.classList.add("hidden");
-        }
-    });
-
-    // Dropdown User
-    const dropdownBtn = document.getElementById('userDropdown');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
-        }
-    });
-</script>
 
 </body>
 </html>
