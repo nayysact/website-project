@@ -18,7 +18,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 </head>
 <body class="bg-gray-100">
 
-<!-- ===== NAVBAR ===== -->
+<!-- ===== NAVBAR ADMIN ===== -->
 <nav class="bg-[#8b5e34] text-white py-4 shadow-md">
     <div class="container mx-auto px-6 flex justify-between items-center">
         <h1 class="text-2xl font-bold">Kelola Hewan</h1>
