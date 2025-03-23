@@ -40,15 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - AdoptMe</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        function showAlert(message) {
-            alert(message);
-        }
-    </script>
 </head>
-<body class="bg-amber-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-96 text-center">
-        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Daftar ke <span class="text-[#8b5e34]">AdoptMe</span></h2>
+<body class="bg-[#8b5e34] flex items-center justify-center h-screen">
+    <div class="bg-white p-10 rounded-lg shadow-lg w-[450px] text-center relative">
+        <!-- Tombol Close (X) -->
+        <button onclick="window.location.href='index.php'" class="absolute top-3 right-3 text-gray-600 text-2xl font-bold hover:text-gray-800">&times;</button>
+        
+        <h2 class="text-3xl font-semibold text-gray-700 mb-6">Daftar <span class="text-[#8b5e34]">AdoptMe</span></h2>
         
         <?php if (!empty($error)): ?>
             <p class="text-red-500 text-sm mb-2">⚠️ <?= $error; ?></p>
@@ -56,19 +54,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <?php if (!empty($success)): ?>
             <script>
-                showAlert("<?= $success; ?>");
+                alert("<?= $success; ?>");
                 window.location.href = "login.php";
             </script>
         <?php endif; ?>
 
-        <form method="POST" class="flex flex-col space-y-3">
+        <form method="POST" class="flex flex-col space-y-4">
             <input type="text" name="nama" placeholder="Nama Lengkap" required 
-                   class="px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-[#8b5e34]">
-            <input type="email" name="email" placeholder="Email" required 
-                   class="px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-[#8b5e34]">
+            class="px-4 py-3 border border-[#8b5e34] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b5e34]">
+            <input type="email" name="email" placeholder="Masukkan Email" required 
+                   class="px-4 py-3 border border-[#8b5e34] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b5e34]">
             <input type="password" name="password" placeholder="Password (min 8 karakter)" required 
-                   class="px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-[#8b5e34]">
-            <button type="submit" class="bg-[#8b5e34] text-white py-2 rounded hover:bg-[#71492a] transition">Daftar</button>
+            class="px-4 py-3 border border-[#8b5e34] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b5e34]">
+            <button type="submit" class="bg-[#8b5e34] text-white py-3 rounded-lg text-lg font-semibold hover:bg-[#71492a] transition">Daftar</button>
         </form>
         
         <p class="text-sm text-gray-600 mt-4">Sudah punya akun? <a href="login.php" class="text-[#8b5e34] font-semibold">Login di sini</a></p>

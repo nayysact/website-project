@@ -6,18 +6,30 @@
     <title>AdoptMe - Tentang</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#f4e7d1] text-gray-900">
+<body class="bg-white text-gray-900">
 
 <!-- Navbar -->
-<nav class="bg-[#8b5e34] text-white py-4 shadow-md">
+<nav class="bg-[#8b5e34] text-white py-4 shadow-md relative z-50">
     <div class="container mx-auto flex justify-between items-center px-6">
         <a href="index.php" class="text-2xl font-bold">AdoptMe</a>
+        
         <div class="space-x-6 flex items-center">
+            <!-- Menu Garis Tiga -->
+            <div class="relative">
+                <button id="menuDropdownBtn" class="text-2xl hover:text-gray-300">
+                    &#9776;
+                </button>
+                <div id="menuDropdown" class="hidden absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-lg shadow-lg z-50">
+                    <a href="toko.php" class="block px-4 py-2 hover:bg-gray-100">Toko</a>
+                    <a href="panduan.php" class="block px-4 py-2 hover:bg-gray-100">Panduan</a>
+                </div>
+            </div>
+            
             <a href="index.php" class="hover:text-gray-300">Beranda</a>
             <a href="tentang.php" class="hover:text-gray-300">Tentang</a>
             <a href="hewan.php" class="hover:text-gray-300">Hewan</a>
             <a href="kontak.php" class="hover:text-gray-300">Kontak</a>
-
+            
             <?php if (isset($_SESSION['nama'])): ?>
                 <?php $inisial = strtoupper(substr($_SESSION['nama'], 0, 1)); ?>
                 <span class="bg-white text-[#8b5e34] px-3 py-1 rounded-full font-bold"><?= $inisial; ?></span>
@@ -28,55 +40,71 @@
     </div>
 </nav>
 
-    <!-- Tentang Section -->
-    <section class="py-16">
-        <div class="container mx-auto flex flex-col md:flex-row items-center px-6">
-            <div class="md:w-1/2 text-center md:text-left">
-                <h2 class="text-[#8b5e34] font-semibold text-lg">Tentang Kami</h2>
-                <h3 class="text-3xl font-bold mt-2">Kenapa AdoptMe?</h3>
-                <p class="text-[#6d4c41] mt-4" style="text-align: justify;">
-                    AdoptMe hadir untuk menjembatani calon pemilik hewan dengan sahabat AdoptMe yang membutuhkan rumah. Kami percaya bahwa setiap hewan berhak mendapatkan kasih sayang dan tempat tinggal yang layak.
-                </p>
-                <p class="text-[#6d4c41] mt-2" style="text-align: justify;">
-                    Melalui platform ini, kami mempermudah proses adopsi hewan dengan transparansi dan kemudahan akses informasi.
-                </p>
-                <a href="kontak.php" class="mt-6 inline-block bg-[#8b5e34] text-white py-2 px-6 rounded-lg hover:bg-[#6d4c41] transition duration-300">
-                    Hubungi Kami
-                </a>
+<!-- Tentang Section -->
+<section class="py-16">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-6">
+        <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-lg text-center md:text-left">
+            <h2 class="text-[#8b5e34] font-semibold text-lg">Tentang Kami</h2>
+            <h3 class="text-3xl font-bold mt-2">Kenapa AdoptMe?</h3>
+            <p class="text-[#6d4c41] mt-4" style="text-align: justify;">
+                AdoptMe hadir untuk menjembatani calon pemilik hewan dengan sahabat AdoptMe yang membutuhkan rumah. Kami percaya bahwa setiap hewan berhak mendapatkan kasih sayang dan tempat tinggal yang layak.
+            </p>
+            <p class="text-[#6d4c41] mt-2" style="text-align: justify;">
+                Melalui platform ini, kami mempermudah proses adopsi hewan dengan transparansi dan kemudahan akses informasi.
+            </p>
+            <a href="kontak.php" class="mt-6 inline-block bg-[#8b5e34] text-white py-2 px-6 rounded-lg hover:bg-[#6d4c41] transition duration-300">
+                Hubungi Kami
+            </a>
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+            <img src="img/1.jpg" alt="Adopsi Hewan" class="rounded-lg shadow-lg">
+        </div>
+    </div>
+</section>
+
+<!-- FAQ section -->
+<section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto text-center px-6">
+        <h2 class="text-[#8b5e34] font-semibold text-lg">FAQ</h2>
+        <h3 class="text-3xl font-bold mt-2">Pertanyaan yang Sering Diajukan</h3>
+        <div class="mt-6 text-left max-w-3xl mx-auto space-y-4">
+            <div class="p-4 border border-[#8b5e34] rounded-lg">
+                <h4 class="font-bold text-[#4a2c1f]">Bagaimana cara mengadopsi hewan?</h4>
+                <p class="text-[#6d4c41] mt-2">Anda bisa melihat daftar hewan yang tersedia di halaman "Hewan", lalu mengisi formulir adopsi atau menghubungi kami untuk informasi lebih lanjut.</p>
             </div>
-            <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-                <img src="img/1.jpg" alt="Adopsi Hewan" class="rounded-lg shadow-lg">
+            <div class="p-4 border border-[#8b5e34] rounded-lg">
+                <h4 class="font-bold text-[#4a2c1f]">Apakah ada biaya adopsi?</h4>
+                <p class="text-[#6d4c41] mt-2">Beberapa hewan mungkin memiliki biaya adopsi untuk menutupi perawatan dan vaksinasi. Detail lebih lanjut dapat ditemukan di halaman "Hewan".</p>
+            </div>
+            <div class="p-4 border border-[#8b5e34] rounded-lg">
+                <h4 class="font-bold text-[#4a2c1f]">Bagaimana jika saya ingin menyerahkan hewan untuk diadopsi?</h4>
+                <p class="text-[#6d4c41] mt-2">Silakan hubungi kami melalui halaman "Kontak" untuk mendapatkan panduan mengenai penyerahan hewan untuk diadopsi.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FAQ section -->
-    <section id="faq" class="py-16 bg-[#fff7eb]">
-        <div class="container mx-auto text-center px-6">
-            <h2 class="text-[#8b5e34] font-semibold text-lg">FAQ</h2>
-            <h3 class="text-3xl font-bold mt-2">Pertanyaan yang Sering Diajukan</h3>
-            <div class="mt-6 text-left max-w-3xl mx-auto space-y-4">
-                <div class="p-4 border border-[#8b5e34] rounded-lg">
-                    <h4 class="font-bold text-[#4a2c1f]">Bagaimana cara mengadopsi hewan?</h4>
-                    <p class="text-[#6d4c41] mt-2">Anda bisa melihat daftar hewan yang tersedia di halaman "Hewan", lalu mengisi formulir adopsi atau menghubungi kami untuk informasi lebih lanjut.</p>
-                </div>
-                <div class="p-4 border border-[#8b5e34] rounded-lg">
-                    <h4 class="font-bold text-[#4a2c1f]">Apakah ada biaya adopsi?</h4>
-                    <p class="text-[#6d4c41] mt-2">Beberapa hewan mungkin memiliki biaya adopsi untuk menutupi perawatan dan vaksinasi. Detail lebih lanjut dapat ditemukan di halaman "Hewan".</p>
-                </div>
-                <div class="p-4 border border-[#8b5e34] rounded-lg">
-                    <h4 class="font-bold text-[#4a2c1f]">Bagaimana jika saya ingin menyerahkan hewan untuk diadopsi?</h4>
-                    <p class="text-[#6d4c41] mt-2">Silakan hubungi kami melalui halaman "Kontak" untuk mendapatkan panduan mengenai penyerahan hewan untuk diadopsi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="bg-[#4a2c1f] text-white py-6 text-center">
+    <p>&copy; 2025 AdoptMe - Temukan Sahabat Sejatimu</p>
+    <p>Jl. Mawar No. 49, Surabaya | Email: kontak@adoptme.com</p>
+</footer>
 
+<!-- JavaScript untuk Dropdown -->
+<script>
+    const menuBtn = document.getElementById("menuDropdownBtn");
+    const menuDropdown = document.getElementById("menuDropdown");
 
-    <!-- Footer -->
-    <footer class="bg-[#4a2c1f] text-white py-6 text-center">
-        <p>&copy; 2025 AdoptMe - Temukan Sahabat Sejatimu</p>
-        <p>Jl. Mawar No. 49, Surabaya | Email: kontak@adoptme.com</p>
-    </footer>
+    menuBtn.addEventListener("click", () => {
+        menuDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!menuBtn.contains(event.target) && !menuDropdown.contains(event.target)) {
+            menuDropdown.classList.add("hidden");
+        }
+    });
+</script>
+
 </body>
 </html>
