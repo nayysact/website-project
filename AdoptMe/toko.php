@@ -17,30 +17,6 @@
     <h1 class="text-3xl font-bold">Toko Perlengkapan Hewan</h1>
     <p>Dapatkan kebutuhan hewan kesayanganmu di sini!</p>
 </header>
-
-<!-- Produk -->
-
-    document.addEventListener("click", (event) => {
-        if (!menuBtn.contains(event.target) && !menuDropdown.contains(event.target)) {
-            menuDropdown.classList.add("hidden");
-        }
-    });
-
-    // Dropdown User
-    const dropdownBtn = document.getElementById('userDropdown');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
-        }
-    });
-</script>
-
 </body>
 </html>
 
