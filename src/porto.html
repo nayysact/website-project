@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoptMe - Temukan Sahabat Sejatimu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    
+    <!-- Navbar -->
+    <nav class="bg-[#4a2c1f] text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold">AdoptMe</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#beranda" class="hover:text-gray-300">Beranda</a></li>
+                <li><a href="#daftar-hewan" class="hover:text-gray-300">Daftar Hewan</a></li>
+                <li><a href="#galeri" class="hover:text-gray-300">Galeri</a></li>
+                <li><a href="#testimoni" class="hover:text-gray-300">Testimoni</a></li>
+                <li><a href="#kontak" class="hover:text-gray-300">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Beranda -->
+    <section id="beranda" class="text-center py-20 bg-[#f4e8d4]">
+        <h2 class="text-4xl font-bold text-[#4a2c1f]">Temukan Sahabat Sejatimu</h2>
+        <p class="mt-4 text-gray-700">Adopsi hewan peliharaan dan berikan mereka rumah yang penuh kasih.</p>
+        <a href="#daftar-hewan" class="mt-6 inline-block bg-[#8b5e34] text-white px-6 py-3 rounded-lg hover:bg-[#6d4c41]">Lihat Daftar Hewan</a>
+    </section>
+
+    <!-- Hero Section -->
+    <header class="bg-[#6d4c41] text-white py-20 text-center">
+        <h1 class="text-5xl font-bold">Selamat Datang di AdoptMe</h1>
+        <p class="mt-3 text-lg">Temukan sahabat setia Anda dan berikan mereka rumah penuh kasih</p>
+        <a href="#hewan" class="mt-6 inline-block bg-[#d9a36a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#c48950]">Jelajahi Hewan</a>
+    </header>
+
+    <!-- Fitur Unggulan -->
+    <section class="py-16 bg-[#e8c8a0] text-center">
+        <h2 class="text-4xl font-bold text-[#4a2c1f]">Kenapa Memilih AdoptMe?</h2>
+        <div class="container mx-auto grid md:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Mudah & Transparan</h3>
+                <p class="mt-2 text-gray-600">Proses adopsi yang jelas, cepat, dan tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Hewan Terawat</h3>
+                <p class="mt-2 text-gray-600">Semua hewan mendapatkan perawatan dan vaksinasi sebelum diadopsi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Dukungan Penuh</h3>
+                <p class="mt-2 text-gray-600">Kami siap membantu Anda selama dan setelah proses adopsi.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Daftar Hewan -->
+    <section class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col h-full">
+            <img src="kucing.jpeg" alt="Kucing" class="rounded-md w-full">
+            <h3 class="text-xl font-semibold mt-2">Camel</h3>
+            <p class="text-gray-600 flex-grow">Kucing betina, 2 tahun, sangat ramah dan suka bermain.</p>
+            <button class="mt-4 bg-[#8b5e34] text-white px-4 py-2 rounded-lg w-full" onclick="openModal('Camel', 'Kucing Betina', '2 tahun', 'Ramah & suka bermain')">Adopsi</button>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col h-full">
+            <img src="anjing.jpg" alt="Anjing" class="rounded-md w-full">
+            <h3 class="text-xl font-semibold mt-2">Jio</h3>
+            <p class="text-gray-600 flex-grow">Anjing jantan, 3 tahun, setia dan mudah dilatih.</p>
+            <button class="mt-4 bg-[#8b5e34] text-white px-4 py-2 rounded-lg w-full" onclick="openModal('Jio', 'Anjing Jantan', '3 tahun', 'Setia dan mudah dilatih')">Adopsi</button>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col h-full">
+            <img src="kelinci.jpg" alt="Kelinci" class="rounded-md w-full">
+            <h3 class="text-xl font-semibold mt-2">Lili</h3>
+            <p class="text-gray-600 flex-grow">Kelinci betina, 1 tahun, lembut dan suka bermain.</p>
+            <button class="mt-4 bg-[#8b5e34] text-white px-4 py-2 rounded-lg w-full" onclick="openModal('Lili', 'Kelinci Betina', '1 tahun', 'Lembut & suka bermain')">Adopsi</button>
+        </div>
+    </section>
+
+    <!-- Modal Pop-up Detail Hewan -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
+            <h3 class="text-xl font-semibold" id="modal-title">Detail Hewan</h3>
+            <p class="text-gray-600 mt-2" id="modal-type"></p>
+            <p class="text-gray-600" id="modal-age"></p>
+            <p class="text-gray-600" id="modal-traits"></p>
+            <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
+    
+    <!-- Galeri -->
+    <section id="galeri" class="py-16 bg-gray-200 text-center">
+        <h2 class="text-3xl font-bold text-[#4a2c1f]">Galeri</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 px-6">
+            <img src="gallery1.jpg" alt="Gallery 1" class="w-full h-40 object-cover rounded-lg">
+            <img src="gallery2.jpg" alt="Gallery 2" class="w-full h-40 object-cover rounded-lg">
+            <img src="gallery3.jpg" alt="Gallery 3" class="w-full h-40 object-cover rounded-lg">
+            <img src="gallery4.jpg" alt="Gallery 4" class="w-full h-40 object-cover rounded-lg">
+        </div>
+    </section>
+    
+    <!-- Testimoni -->
+    <section class="container mx-auto mt-12 px-6">
+        <h2 class="text-2xl font-semibold text-center">Testimoni Pengadopsi</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <p class="text-gray-600 italic">"Saya selalu ingin memiliki kucing, tetapi ragu karena takut tidak bisa merawatnya dengan baik. Setelah mengadopsi Momo melalui AdoptMe, saya menyadari betapa menyenangkannya memiliki teman berbulu di rumah. Dia sangat penyayang dan selalu menemani saya saat bekerja. Terima kasih kepada pengasuh sebelumnya yang telah merawatnya dengan baik sebelum saya adopsi!"</p>
+            <p class="text-right text-sm font-semibold">- Naya, Pengadopsi Kucing Persia </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <p class="text-gray-600 italic">"Mengadopsi kelinci adalah keputusan terbaik yang pernah saya buat! Bubu sangat menggemaskan dan cepat beradaptasi di rumah. Dia suka melompat-lompat di sekitar saya dan sangat aktif saat pagi hari. Awalnya saya pikir merawat kelinci sulit, tapi ternyata cukup mudah selama kita memahami kebutuhannya. Saya sangat bersyukur bisa memberikan rumah baru untuk Bubu!"</p>
+            <p class="text-right text-sm font-semibold">- Balqis, Pengadopsi Kelinci Holland Lop </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <p class="text-gray-600 italic">"Saya mengadopsi Max, seekor anjing golden retriever, melalui AdoptMe satu tahun lalu. Awalnya dia pemalu dan takut dengan lingkungan baru, tetapi dengan kasih sayang dan kesabaran, dia berubah menjadi anjing yang ceria dan setia. Mengadopsi anjing memberikan kebahagiaan luar biasa bagi saya dan keluarga!"</p>
+            <p class="text-right text-sm font-semibold">- Rania, Pengadopsi Anjing Golden Retriever </p>
+        </div>
+    </section>
+    
+    <section id="kontak" class="py-16 bg-[#f4dfc8]">
+        <div class="container mx-auto text-center">
+          <h2 class="text-[#8b5e34] font-semibold text-lg">Contact</h2>
+          <h3 class="text-3xl font-bold mt-2">Hubungi Kami</h3>
+          <p class="text-[#6d4c41] mt-2 max-w-md mx-auto">Jika Anda tertarik mengadopsi atau ingin bertanya, silakan isi formulir di bawah ini.</p>
+          
+          <form class="mt-8 max-w-lg mx-auto text-left space-y-4">
+            <div>
+              <label class="block text-[#4a2c1f]">Nama</label>
+              <input type="text" class="w-full px-4 py-2 border border-[#8b5e34] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#8b5e34]" required>
+            </div>
+            <div>
+              <label class="block text-[#4a2c1f]">Email</label>
+              <input type="email" class="w-full px-4 py-2 border border-[#8b5e34] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#8b5e34]" required>
+            </div>
+            <div>
+              <label class="block text-[#4a2c1f]">Pesan</label>
+              <textarea class="w-full px-4 py-2 border border-[#8b5e34] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#8b5e34]" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#8b5e34] text-white py-2 px-4 rounded-lg hover:bg-[#6d4c41] transition duration-300">
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#4a2c1f] text-white py-6 text-center">
+        <p>&copy; 2025 AdoptMe - Temukan Sahabat Sejatimu</p>
+        <p>Jl. Mawar No. 49, Surabaya | Email: kontak@adoptme.com</p>
+    </footer>
+    
+</body>
+</html>

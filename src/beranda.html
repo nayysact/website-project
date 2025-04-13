@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoptMe - Beranda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f4e7d1] text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-[#8b5e34] text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#" class="text-2xl font-bold">AdoptMe</a>
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                &#9776;
+            </button>
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="beranda.html" class="hover:text-gray-300">Beranda</a>
+                <a href="tentang.html" class="hover:text-gray-300">Tentang</a>
+                <a href="hewan.html" class="hover:text-gray-300">Hewan</a>
+                <a href="kontak.html" class="hover:text-gray-300">Kontak</a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col text-center bg-[#8b5e34] py-4">
+            <a href="beranda.html" class="py-2">Beranda</a>
+            <a href="tentang.html" class="py-2">Tentang</a>
+            <a href="hewan.html" class="py-2">Hewan</a>
+            <a href="kontak.html" class="py-2">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-[#6d4c41] text-white py-20 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-bold">Selamat Datang di AdoptMe</h1>
+        <p class="mt-3 text-lg">Temukan sahabat setia Anda dan berikan mereka rumah penuh kasih</p>
+        <a href="hewan.html" class="mt-6 inline-block bg-[#d9a36a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#c48950]">Jelajahi Hewan</a>
+    </header>
+
+    <!-- Fitur Unggulan -->
+    <section class="py-16 bg-[#e8c8a0] text-center px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#4a2c1f]">Kenapa Memilih AdoptMe?</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Mudah & Transparan</h3>
+                <p class="mt-2 text-gray-600">Proses adopsi yang jelas, cepat, dan tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Hewan Terawat</h3>
+                <p class="mt-2 text-gray-600">Semua hewan mendapatkan perawatan dan vaksinasi sebelum diadopsi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-[#8b5e34]">Dukungan Penuh</h3>
+                <p class="mt-2 text-gray-600">Kami siap membantu Anda selama dan setelah proses adopsi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#4a2c1f] text-white py-6 text-center px-4">
+        <p>&copy; 2025 AdoptMe - Temukan Sahabat Sejatimu</p>
+        <p>Jl. Mawar No. 49, Surabaya | Email: kontak@adoptme.com</p>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
