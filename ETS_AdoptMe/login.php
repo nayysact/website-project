@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['nama'] = $row['nama'];
+                $_SESSION['email'] = $row['email'];
 
                 // Daftar email yang diizinkan jadi admin
                 $allowed_admins = ['admin@adoptme.com'];
